@@ -4,9 +4,7 @@ import { List } from './List';
 import { ListItem } from './ListItem';
 
 export class App extends Component {
-  constructor(){
-    super()
-  }
+
   setup(props) {
 
     this.state = {
@@ -19,7 +17,7 @@ export class App extends Component {
     const h1HTMLelement = document.createElement('h1');
     const spanHTMLelement = document.createElement('span');
     spanHTMLelement.textContent = `Итого: ${this.state.total}`;
-
+this.spanHTMLelement = spanHTMLelement;
     h1HTMLelement.appendChild(spanHTMLelement)
    this.$total = spanHTMLelement;
 
@@ -31,17 +29,19 @@ export class App extends Component {
     this.$rootElement.appendChild(donateForm.$rootElement);
     const donateList = new List();
     this.$rootElement.appendChild(donateList.$rootElement);
-
-    //this.onItemCreate =this.onItemCreate.bind(this);
-    this.donateList =donateList;
+  
+    //this.onItemCreate =onItemCreate.bind(this);
+    this.donateList = donateList;
+    console.log(this.donateList)
   }
  
   
   onItemCreate(amount) {
     const item = new ListItem({amount: amount});
     this.state.donates.push(item);
+    console.log(this.donateList)
     this.donateList.addItem(item);
     this.state.total += amount;
-    spanHTMLelement.textContent = `Итого: ${this.state.total}`;
+    this.spanHTMLelement.textContent = `Итого: ${this.state.total}`;
   }
 }

@@ -13,7 +13,9 @@ export class ListItem extends Component {
     const liHTML = document.createElement('li');
     olHTML.appendChild(liHTML);
     this.$rootElement.append(olHTML)
-    liHTML.textContent = `${this.state.date} - ${this.state.amount}`;
+    const year = new Date();
+    
+    liHTML.textContent = `${this.state.date.toLocaleDateString('en-GB')}, ${this.state.date.toLocaleTimeString()} - ${this.state.amount}`;
 
 
 

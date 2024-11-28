@@ -14,3 +14,9 @@ develop
 feature/main-page
 feature/about-company
 https://github.com/UlanIsaq/finalProject-1.git
+
+pull request
+
+git pull origin master
+git branch -d develop (deleting the btanch)
+
