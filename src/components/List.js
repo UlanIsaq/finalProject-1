@@ -1,9 +1,7 @@
 import { Component } from '../core/Component';
 
 export class List extends Component {
-  constructor(){
-    super()
-  }
+ 
   setup() {
     this.$rootElement = document.createElement('div');
     this.$rootElement.className = 'donates-container';
@@ -15,7 +13,7 @@ export class List extends Component {
     this.$divHTML.append(this.$h2HTML);
     this.$rootElement.append(this.$divHTML);
     this.$listContainer = this.$divHTML;
-    //this.addItem = addItem.bind(this)
+   
   }
 
   addItem(item) {

@@ -9,16 +9,29 @@ export class ListItem extends Component {
     }
     this.$rootElement = document.createElement('div');
     this.$rootElement.className = 'donate-item';
-    const olHTML= document.createElement('ol');
-    const liHTML = document.createElement('li');
-    olHTML.appendChild(liHTML);
-    this.$rootElement.append(olHTML)
+
+    const innerDiv = document.createElement('div');
+
+    this.$rootElement.append(innerDiv)
     const year = new Date();
-    
-    liHTML.textContent = `${this.state.date.toLocaleDateString('en-GB')}, ${this.state.date.toLocaleTimeString()} - ${this.state.amount}`;
+    const b = document.createElement('b')
+    b.textContent = `${'$'}${this.state.amount}`
+    innerDiv.textContent = `${this.state.date.toLocaleDateString('en-GB')}, ${this.state.date.toLocaleTimeString()} - `;
+    innerDiv.appendChild(b)
+    const deleteButton = document.createElement('button');
+
+    deleteButton.type = 'button';
+    deleteButton.textContent = "Delete";
+    deleteButton.className = 'delete-button'
+    deleteButton.onclick = () => { this.deleteItem(this) };
+
+    innerDiv.append(deleteButton)
 
 
+  }
 
-  
+  deleteItem(button) {
+
+    this.$rootElement.remove();
   }
 }
