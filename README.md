@@ -8,3 +8,9 @@ git push origin master
 git reset [index.html]
 git diff
 git reset --hard
+git branch
+master
+develop
+feature/main-page
+feature/about-company
+https://github.com/UlanIsaq/finalProject-1.git
