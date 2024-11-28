@@ -25,7 +25,7 @@ export class ListItem extends Component {
     deleteButton.className = 'delete-button'
     deleteButton.onclick = () => { this.deleteItem(this) };
 
-    innerDiv.append(deleteButton)
+    this.$rootElement.append(deleteButton)
 
 
   }

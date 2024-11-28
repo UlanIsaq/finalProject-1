@@ -8,7 +8,9 @@ export class List extends Component {
 
     this.$h2HTML = document.createElement('h2');
     this.$h2HTML.textContent = 'List of donated people'
+    this.$h2HTML.className = 'donates-container__title'
     this.$divHTML = document.createElement('div');
+    this.$divHTML.className = 'donates-container__donates' 
 
     this.$divHTML.append(this.$h2HTML);
     this.$rootElement.append(this.$divHTML);
