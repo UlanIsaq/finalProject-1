@@ -23,15 +23,20 @@ export class ListItem extends Component {
     deleteButton.type = 'button';
     deleteButton.textContent = "Delete";
     deleteButton.className = 'delete-button'
-    deleteButton.onclick = () => { this.deleteItem(this) };
+    deleteButton.onclick = () => {
+      this.deleteItem(this.props.amount)
+    };
 
     this.$rootElement.append(deleteButton)
 
 
   }
 
-  deleteItem(button) {
+  deleteItem(amount) {
+    const itemDelete = document.querySelector('span')
+    const total = Number(itemDelete.textContent.split(': ')[1].trim()) - amount;
 
+    itemDelete.textContent = `Итого: ${total}`;
     this.$rootElement.remove();
   }
 }

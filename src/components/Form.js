@@ -34,25 +34,22 @@ export class Form extends Component {
 
     this.$input.addEventListener('input', this.handleInput.bind(this))
     this.$rootElement.addEventListener('submit', this.handleSubmit.bind(this))
-    console.log(this.$input)
 
   }
 
   handleInput(event) {
-    console.log(event.target.value)
+  
     this.state.amount = event.target.value;
-    console.log(this.state.amount)
-    console.log('Valid number', this.getisValid())
-
-    const disabled = this.getisValid()
+    const getisValid = this.state.amount >= 1 && this.state.amount <= 100
+    this.isValid = getisValid;
+    const disabled = this.isValid
     this.$button.disabled = !disabled;
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.getisValid)
-    if (this.getisValid()) {
-      console.log(this.getisValid)
+
+    if (this.isValid) {
       this.state.amount = this.state.amount;
       this.$input.value = '';
     }

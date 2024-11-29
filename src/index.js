@@ -7,5 +7,3 @@ document.addEventListener('DOMContentLoaded', function () {
   //document.body.appendChild(new DemoCounter({ title: 'App counter' }).$rootElement);
 
 });
-
-console.log('Hello')

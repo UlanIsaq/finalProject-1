@@ -17,31 +17,31 @@ export class App extends Component {
     const h1HTMLelement = document.createElement('h1');
     const spanHTMLelement = document.createElement('span');
     spanHTMLelement.textContent = `Итого: ${this.state.total}`;
-this.spanHTMLelement = spanHTMLelement;
+    this.spanHTMLelement = spanHTMLelement;
     h1HTMLelement.appendChild(spanHTMLelement)
-   this.$total = spanHTMLelement;
+    this.$total = spanHTMLelement;
 
-   this.$rootElement.appendChild(h1HTMLelement)
+    this.$rootElement.appendChild(h1HTMLelement)
 
-   this.$rootElement.append(document.createElement('br'))
+    this.$rootElement.append(document.createElement('br'))
 
-    const donateForm = new Form({onSubmit: this.onItemCreate.bind(this)});
+    const donateForm = new Form({ onSubmit: this.onItemCreate.bind(this) });
     this.$rootElement.appendChild(donateForm.$rootElement);
     const donateList = new List();
     this.$rootElement.appendChild(donateList.$rootElement);
-  
-    //this.onItemCreate =onItemCreate.bind(this);
     this.donateList = donateList;
-    console.log(this.donateList)
+
+
   }
- 
-  
+
+
   onItemCreate(amount) {
-    const item = new ListItem({amount: amount});
+    const item = new ListItem({ amount: amount });
     this.state.donates.push(item);
-    console.log(this.donateList)
     this.donateList.addItem(item);
     this.state.total += amount;
     this.spanHTMLelement.textContent = `Итого: ${this.state.total}`;
   }
+
+
 }

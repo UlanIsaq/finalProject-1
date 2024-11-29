@@ -20,3 +20,5 @@ pull request
 git pull origin master
 git branch -d develop (deleting the btanch)
 
+git merge [branch name]
+git checkout -b [feature]
